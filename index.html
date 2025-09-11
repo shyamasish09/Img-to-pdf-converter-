@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Image → PDF (single-file)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap" role="application">
+    <h1>Image → PDF (single HTML file)</h1>
+    <p class="lead">Select or drag & drop images. They will be embedded into an A4 PDF (one image per page) and downloaded.</p>
+    
+    <div class="controls">
+      <label class="btn" id="pickBtn">Choose images
+        <input id="fileInput" type="file" accept="image/*" multiple>
+      </label>
+      <button class="btn ghost" id="convertBtn">Convert to PDF</button>
+      <button class="btn ghost" id="clearBtn">Clear</button>
+      <div style="margin-left:auto" class="options">
+        <label class="select">Size:
+          <select id="sizeSelect" title="Paper size">
+            <option value="a4">A4 (210 × 297 mm)</option>
+            <option value="letter">Letter (8.5 × 11 in)</option>
+          </select>
+        </label>
+        <label class="select">Quality:
+          <select id="qualitySelect" title="Image quality">
+            <option value="0.92">High</option>
+            <option value="0.8">Medium</option>
+            <option value="0.6">Low</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div id="dropArea" class="drop" tabindex="0">Drag &amp; drop images here, or click "Choose images"</div>
+
+    <div class="thumbs" id="thumbs"></div>
+    <div class="meta small" id="status">No images selected.</div>
+    <footer>Tip: you can reorder images by dragging the thumbnails (mobile: long-press then drag).</footer>
+  </div>
+
+  <!-- jsPDF CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
